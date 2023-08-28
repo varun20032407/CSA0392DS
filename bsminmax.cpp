@@ -1,24 +1,20 @@
 #include<stdio.h>
 int main(){
-	int d;
 	int n,arr[100];
-	int temp,s;
-	int found=0,ind=-1;
-	//input of array elements
-	printf("Enter the number of number of elements:- ");
+	int found=0,ind=-1,s;
+	printf("Enter the number of elements:- ");
 	scanf("%d",&n);
 	for(int i=0;i<n;i++){
 		printf("Enter the element:- ");
 		scanf("%d",&arr[i]);
 	}
 	for(int i=0;i<n;i++){
-		printf("%d",arr[i]);
+		printf("%d\n",arr[i]);
 	}
-	//sorting of array
 	for(int i=0;i<n;i++){
 		for(int j=i+1;j<n;j++){
 			if(arr[i]>arr[j]){
-				temp=arr[i];
+				int temp=arr[i];
 				arr[i]=arr[j];
 				arr[j]=temp;
 			}
@@ -26,10 +22,9 @@ int main(){
 	}
 	printf("\nSORTED ARRAY");
 	for(int i=0;i<n;i++){
-		printf("\n%d\n",arr[i]);
+		printf("\n%d",arr[i]);
 	}
-	//binary search after sorting
-	printf("Enter the element to search:- ");
+	printf("\nEnter the element to search:- ");
 	scanf("%d",&s);
 	for(int i=0;i<n;i++){
 		if(arr[i]==s){
@@ -39,13 +34,11 @@ int main(){
 		}
 	}
 	if(found){
-		printf("Element found:- %d",ind);
+		printf("\nElement %d found",s);
 	}
 	else{
-		printf("Element not found");
+		printf("\nElement %d not found",s);
 	}
-	//display of element
-	printf("\nEnter the display element:- ");
-	scanf("%d",&d);
-	printf("%d",arr[d]);
+	printf("\nMinimum Number:- %d",arr[0]);
+	printf("\nMaximum Number:- %d",arr[n-1]);
 }
